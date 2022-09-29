@@ -55,8 +55,7 @@ static void MX_GPIO_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void display7SEG(int num) {
-	//num là thời gian được hiển thị trên led 7 đoạn.
-	if (num == 0)
+	if (num == 0)	//Led 7 đoạn hiển thị số 0
 			{
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -66,7 +65,7 @@ void display7SEG(int num) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, SET);
 	}
-	if (num == 1)
+	if (num == 1)	//Led 7 đoạn hiển thị số 1
 			{
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, SET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -76,7 +75,7 @@ void display7SEG(int num) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, SET);
 	}
-	if (num == 2)
+	if (num == 2)	//Led 7 đoạn hiển thị số 2
 			{
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -86,7 +85,7 @@ void display7SEG(int num) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-	if (num == 3)
+	if (num == 3)	//Led 7 đoạn hiển thị số 3
 			{
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -96,7 +95,7 @@ void display7SEG(int num) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-	if (num == 4)
+	if (num == 4)	//Led 7 đoạn hiển thị số 4
 			{
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, SET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -106,7 +105,7 @@ void display7SEG(int num) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-	if (num == 5)
+	if (num == 5)	//Led 7 đoạn hiển thị số 5
 			{
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, SET);
@@ -116,7 +115,7 @@ void display7SEG(int num) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-	if (num == 6)
+	if (num == 6)	//Led 7 đoạn hiển thị số 6
 			{
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, SET);
@@ -126,7 +125,7 @@ void display7SEG(int num) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-	if (num == 7)
+	if (num == 7)	//Led 7 đoạn hiển thị số 7
 			{
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -136,7 +135,7 @@ void display7SEG(int num) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, SET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, SET);
 	}
-	if (num == 8)
+	if (num == 8)	//Led 7 đoạn hiển thị số 8
 			{
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
@@ -146,7 +145,7 @@ void display7SEG(int num) {
 		HAL_GPIO_WritePin(SEG_F_GPIO_Port, SEG_F_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_G_GPIO_Port, SEG_G_Pin, RESET);
 	}
-	if (num == 9)
+	if (num == 9)	//Led 7 đoạn hiển thị số 9
 			{
 		HAL_GPIO_WritePin(SEG_A_GPIO_Port, SEG_A_Pin, RESET);
 		HAL_GPIO_WritePin(SEG_B_GPIO_Port, SEG_B_Pin, RESET);
