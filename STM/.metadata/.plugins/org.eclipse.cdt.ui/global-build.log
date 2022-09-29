@@ -1,4 +1,4 @@
-21:00:18 **** Incremental Build of configuration Debug for project Bai8 ****
+21:12:51 **** Incremental Build of configuration Debug for project Bai8 ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Bai8.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\VXL VDK\LAB\Lab1\Bai8\STM\Bai8\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Bai8.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -8,13 +8,13 @@ arm-none-eabi-size   Bai8.elf
 arm-none-eabi-objdump -h -S  Bai8.elf  > "Bai8.list"
 arm-none-eabi-objcopy  -O ihex  Bai8.elf  "Bai8.hex"
    text	   data	    bss	    dec	    hex	filename
-   5216	     20	   1572	   6808	   1a98	Bai8.elf
+   5080	     20	   1572	   6672	   1a10	Bai8.elf
 arm-none-eabi-objcopy  -O binary  Bai8.elf  "Bai8.bin"
 Finished building: default.size.stdout
  
 Finished building: Bai8.hex
 Finished building: Bai8.bin
- 
 Finished building: Bai8.list
+ 
  
  
