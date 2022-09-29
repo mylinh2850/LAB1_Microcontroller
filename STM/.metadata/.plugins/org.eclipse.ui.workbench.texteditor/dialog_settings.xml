@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="hLed"/>
+		<item key="selection" value="indexOfSecondLed"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="secondLed"/>
+			<item value="minuteLed"/>
+			<item value="hourLed"/>
+			<item value="sCounter"/>
+			<item value="mCounter"/>
+			<item value="sLed"/>
+			<item value="mLed"/>
+			<item value="hLed"/>
 			<item value="HLed"/>
 		</list>
 		<list key="replacehistory">
+			<item value="indexOfSecondLed"/>
+			<item value="indexOfMinuteLed"/>
+			<item value="indexOfHourLed"/>
+			<item value="secondCounter"/>
+			<item value="minuteCounter"/>
+			<item value="secondLed"/>
+			<item value="minuteLed"/>
+			<item value="hourLed"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

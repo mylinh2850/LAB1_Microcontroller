@@ -186,123 +186,123 @@ int main(void) {
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 
-	int indexOfHourLed = 0;
-	int indexOfMinuteLed = 0;
-	int indexOfSecondLed = 0;
+	int hourLed = 0;
 	int minuteCounter = 0;
+	int minuteLed = 0;
 	int secondCounter = 0;
+	int secondLed = 0;
 	while (1) {
-		//Set led for minutes (indexOfMinuteLed)
+		//Set led for minutes (minuteLed)
 		if (minuteCounter >= 0 && minuteCounter <= 4) {
-			indexOfMinuteLed = 0;
+			minuteLed = 0;
 		}
 		if (minuteCounter >= 5 && minuteCounter <= 9) {
-			indexOfMinuteLed = 1;
+			minuteLed = 1;
 		}
 		if (minuteCounter >= 10 && minuteCounter <= 14) {
-			indexOfMinuteLed = 2;
+			minuteLed = 2;
 		}
 		if (minuteCounter >= 15 && minuteCounter <= 19) {
-			indexOfMinuteLed = 3;
+			minuteLed = 3;
 		}
 		if (minuteCounter >= 20 && minuteCounter <= 24) {
-			indexOfMinuteLed = 4;
+			minuteLed = 4;
 		}
 		if (minuteCounter >= 25 && minuteCounter <= 29) {
-			indexOfMinuteLed = 5;
+			minuteLed = 5;
 		}
 		if (minuteCounter >= 30 && minuteCounter <= 34) {
-			indexOfMinuteLed = 6;
+			minuteLed = 6;
 		}
 		if (minuteCounter >= 35 && minuteCounter <= 39) {
-			indexOfMinuteLed = 7;
+			minuteLed = 7;
 		}
 		if (minuteCounter >= 40 && minuteCounter <= 44) {
-			indexOfMinuteLed = 8;
+			minuteLed = 8;
 		}
 		if (minuteCounter >= 45 && minuteCounter <= 49) {
-			indexOfMinuteLed = 9;
+			minuteLed = 9;
 		}
 		if (minuteCounter >= 50 && minuteCounter <= 54) {
-			indexOfMinuteLed = 10;
+			minuteLed = 10;
 		}
 		if (minuteCounter >= 55 && minuteCounter <= 59) {
-			indexOfMinuteLed = 11;
+			minuteLed = 11;
 		}
 
-		//Set led for seconds (indexOfSecondLed)
+		//Set led for seconds (secondLed)
 		if (secondCounter >= 0 && secondCounter <= 4) {
-			indexOfSecondLed = 0;
+			secondLed = 0;
 		}
 		if (secondCounter >= 5 && secondCounter <= 9) {
-			indexOfSecondLed = 1;
+			secondLed = 1;
 		}
 		if (secondCounter >= 10 && secondCounter <= 14) {
-			indexOfSecondLed = 2;
+			secondLed = 2;
 		}
 		if (secondCounter >= 15 && secondCounter <= 19) {
-			indexOfSecondLed = 3;
+			secondLed = 3;
 		}
 		if (secondCounter >= 20 && secondCounter <= 24) {
-			indexOfSecondLed = 4;
+			secondLed = 4;
 		}
 		if (secondCounter >= 25 && secondCounter <= 29) {
-			indexOfSecondLed = 5;
+			secondLed = 5;
 		}
 		if (secondCounter >= 30 && secondCounter <= 34) {
-			indexOfSecondLed = 6;
+			secondLed = 6;
 		}
 		if (secondCounter >= 35 && secondCounter <= 39) {
-			indexOfSecondLed = 7;
+			secondLed = 7;
 		}
 		if (secondCounter >= 40 && secondCounter <= 44) {
-			indexOfSecondLed = 8;
+			secondLed = 8;
 		}
 		if (secondCounter >= 45 && secondCounter <= 49) {
-			indexOfSecondLed = 9;
+			secondLed = 9;
 		}
 		if (secondCounter >= 50 && secondCounter <= 54) {
-			indexOfSecondLed = 10;
+			secondLed = 10;
 		}
 		if (secondCounter >= 55 && secondCounter <= 59) {
-			indexOfSecondLed = 11;
+			secondLed = 11;
 		}
 
 		//Led display settings
 		clearAllClock(); //Turn off all lights
 
 		//Case 1: led of hours is the same as led of minutes
-		if (indexOfHourLed == indexOfMinuteLed) {
+		if (hourLed == minuteLed) {
 			//Case 1.1: led of hours is the same as led of seconds
-			if (indexOfHourLed == indexOfSecondLed) {
-				setNumberOnClock(indexOfHourLed);
+			if (hourLed == secondLed) {
+				setNumberOnClock(hourLed);
 			}
 			//Case 1.2: led of hours is different from led of seconds
-			if (indexOfHourLed != indexOfSecondLed) {
-				setNumberOnClock(indexOfHourLed);
-				setNumberOnClock(indexOfSecondLed);
+			if (hourLed != secondLed) {
+				setNumberOnClock(hourLed);
+				setNumberOnClock(secondLed);
 			}
 		}
 
 		//Case 2: led of hours is different from led of minutes
-		if (indexOfHourLed != indexOfMinuteLed) {
+		if (hourLed != minuteLed) {
 			//Case 2.1: led of hours is the same as led of seconds
-			if (indexOfHourLed == indexOfSecondLed) {
-				setNumberOnClock(indexOfHourLed);
-				setNumberOnClock(indexOfMinuteLed);
+			if (hourLed == secondLed) {
+				setNumberOnClock(hourLed);
+				setNumberOnClock(minuteLed);
 			}
 			//Case 2.2: led of hours is different from led of seconds
-			if (indexOfHourLed != indexOfSecondLed) {
+			if (hourLed != secondLed) {
 				//Case 2.2.1: led of minutes is the same as led of seconds
-				if (indexOfMinuteLed == indexOfSecondLed) {
-					setNumberOnClock(indexOfHourLed);
-					setNumberOnClock(indexOfMinuteLed);
+				if (minuteLed == secondLed) {
+					setNumberOnClock(hourLed);
+					setNumberOnClock(minuteLed);
 				}
 				//Case 2.2.2: led of minutes is different from led of seconds
-				if (indexOfMinuteLed != indexOfSecondLed) {
-					setNumberOnClock(indexOfHourLed);
-					setNumberOnClock(indexOfMinuteLed);
-					setNumberOnClock(indexOfSecondLed);
+				if (minuteLed != secondLed) {
+					setNumberOnClock(hourLed);
+					setNumberOnClock(minuteLed);
+					setNumberOnClock(secondLed);
 				}
 			}
 		}
@@ -310,12 +310,12 @@ int main(void) {
 		//Timer setting
 		if (secondCounter == 59) {		//if seconds = 59
 			if (minuteCounter == 59) {	//if minutes = 59
-				if (indexOfHourLed == 11) {	//if hours = 11
-					indexOfHourLed = 0;
+				if (hourLed == 11) {	//if hours = 11
+					hourLed = 0;
 					minuteCounter = 0;
 					secondCounter = -1;
 				}
-				indexOfHourLed++;
+				hourLed++;
 				minuteCounter = 0;
 				secondCounter = -1;
 			}

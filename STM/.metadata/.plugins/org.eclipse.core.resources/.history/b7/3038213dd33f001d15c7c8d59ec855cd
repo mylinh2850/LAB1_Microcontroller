@@ -60,6 +60,7 @@ void clearNumberOnClock(int num);
 /* USER CODE BEGIN 0 */
 void clearAllClock()
 {
+	HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, RESET);
 	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, RESET);
 	HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, RESET);
 	HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, RESET);
@@ -71,7 +72,6 @@ void clearAllClock()
 	HAL_GPIO_WritePin(LED9_GPIO_Port, LED9_Pin, RESET);
 	HAL_GPIO_WritePin(LED10_GPIO_Port, LED10_Pin, RESET);
 	HAL_GPIO_WritePin(LED11_GPIO_Port, LED11_Pin, RESET);
-	HAL_GPIO_WritePin(LED12_GPIO_Port, LED12_Pin, RESET);
 }
 
 void setNumberOnClock(int num)
@@ -214,9 +214,9 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  int hCounter = 0;
-  int mCounter = 0;
-  int sCounter = 0;
+  int hourLed = 0;
+  int mCounter = 0; int minuteLed = 0;
+  int sCounter = 0; int secondLed = 0;
   HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, RESET);
   HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, RESET);
   HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, RESET);
@@ -231,170 +231,162 @@ int main(void)
   HAL_GPIO_WritePin(LED11_GPIO_Port, LED11_Pin, RESET);
   while (1)
   {
-	  //Hours led
-	  if (hCounter == 0)
+	  //Set minute led
+	  if (mCounter >= 0 && mCounter <= 4)
 	  {
-		  setNumberOnClock(0);
+		  minuteLed = 0;
 	  }
-	  if (hCounter == 1)
+	  if (mCounter >= 5 && mCounter <= 9)
 	  {
-		  setNumberOnClock(1);
+		  minuteLed = 1;
 	  }
-	  if (hCounter == 2)
+	  if (mCounter >= 10 && mCounter <= 14)
 	  {
-		  setNumberOnClock(2);
+		  minuteLed = 2;
 	  }
-	  if (hCounter == 3)
+	  if (mCounter >= 15 && mCounter <= 19)
 	  {
-		  setNumberOnClock(3);
+		  minuteLed = 3;
 	  }
-	  if (hCounter == 4)
+	  if (mCounter >= 20 && mCounter <= 24)
 	  {
-		  setNumberOnClock(4);
+		  minuteLed = 4;
 	  }
-	  if (hCounter == 5)
+	  if (mCounter >= 25 && mCounter <= 29)
 	  {
-		  setNumberOnClock(5);
+		  minuteLed = 5;
 	  }
-	  if (hCounter == 6)
+	  if (mCounter >= 30 && mCounter <= 34)
 	  {
-		  setNumberOnClock(6);
+		  minuteLed = 6;
 	  }
-	  if (hCounter == 7)
+	  if (mCounter >= 35 && mCounter <= 39)
 	  {
-		  setNumberOnClock(7);
+		  minuteLed = 7;
 	  }
-	  if (hCounter == 8)
+	  if (mCounter >= 40 && mCounter <= 44)
 	  {
-		  setNumberOnClock(8);
+		  minuteLed = 8;
 	  }
-	  if (hCounter == 9)
+	  if (mCounter >= 45 && mCounter <= 49)
 	  {
-		  setNumberOnClock(9);
+		  minuteLed = 9;
 	  }
-	  if (hCounter == 10)
+	  if (mCounter >= 50 && mCounter <= 54)
 	  {
-		  setNumberOnClock(10);
+		  minuteLed = 10;
 	  }
-	  if (hCounter == 11)
+	  if (mCounter >= 55 && mCounter <= 59)
 	  {
-		  setNumberOnClock(11);
-	  }
-
-	  //Minutes led
-	  if (mCounter >= 0 && mCount <= 4)
-	  {
-		  setNumberOnClock(0);
-	  }
-	  if (mCounter >= 5 && mCount <= 9)
-	  {
-		  setNumberOnClock(1);
-	  }
-	  if (mCounter >= 10 && mCount <= 14)
-	  {
-		  setNumberOnClock(2);
-	  }
-	  if (mCounter >= 15 && mCount <= 19)
-	  {
-		  setNumberOnClock(3);
-	  }
-	  if (mCounter >= 20 && mCount <= 24)
-	  {
-		  setNumberOnClock(4);
-	  }
-	  if (mCounter >= 25 && mCount <= 29)
-	  {
-		  setNumberOnClock(5);
-	  }
-	  if (mCounter >= 30 && mCount <= 34)
-	  {
-		  setNumberOnClock(6);
-	  }
-	  if (mCounter >= 35 && mCount <= 39)
-	  {
-		  setNumberOnClock(7);
-	  }
-	  if (mCounter >= 40 && mCount <= 44)
-	  {
-		  setNumberOnClock(8);
-	  }
-	  if (mCounter >= 45 && mCount <= 49)
-	  {
-		  setNumberOnClock(9);
-	  }
-	  if (mCounter >= 50 && mCount <= 54)
-	  {
-		  setNumberOnClock(10);
-	  }
-	  if (mCounter >= 55 && mCount <= 59)
-	  {
-		  setNumberOnClock(11);
+		  minuteLed = 11;
 	  }
 
-	  //Seconds led
-	  if (sCounter >= 0 && mCount <= 4)
+	  //Set second led
+	  if (sCounter >= 0 && sCounter <= 4)
 	  {
-		  setNumberOnClock(0);
+		  secondLed = 0;
 	  }
-	  if (sCounter >= 5 && mCount <= 9)
+	  if (sCounter >= 5 && sCounter <= 9)
 	  {
-		  setNumberOnClock(1);
+		  secondLed = 1;
 	  }
-	  if (sCounter >= 10 && mCount <= 14)
+	  if (sCounter >= 10 && sCounter <= 14)
 	  {
-		  setNumberOnClock(2);
+		  secondLed = 2;
 	  }
-	  if (sCounter >= 15 && mCount <= 19)
+	  if (sCounter >= 15 && sCounter <= 19)
 	  {
-		  setNumberOnClock(3);
+		  secondLed = 3;
 	  }
-	  if (sCounter >= 20 && mCount <= 24)
+	  if (sCounter >= 20 && sCounter <= 24)
 	  {
-		  setNumberOnClock(4);
+		  secondLed = 4;
 	  }
-	  if (sCounter >= 25 && mCount <= 29)
+	  if (sCounter >= 25 && sCounter <= 29)
 	  {
-		  setNumberOnClock(5);
+		  secondLed = 5;
 	  }
-	  if (sCounter >= 30 && mCount <= 34)
+	  if (sCounter >= 30 && sCounter <= 34)
 	  {
-		  setNumberOnClock(6);
+		  secondLed = 6;
 	  }
-	  if (sCounter >= 35 && mCount <= 39)
+	  if (sCounter >= 35 && sCounter <= 39)
 	  {
-		  setNumberOnClock(7);
+		  secondLed = 7;
 	  }
-	  if (sCounter >= 40 && mCount <= 44)
+	  if (sCounter >= 40 && sCounter <= 44)
 	  {
-		  setNumberOnClock(8);
+		  secondLed = 8;
 	  }
-	  if (sCounter >= 45 && mCount <= 49)
+	  if (sCounter >= 45 && sCounter <= 49)
 	  {
-		  setNumberOnClock(9);
+		  secondLed = 9;
 	  }
-	  if (sCounter >= 50 && mCount <= 54)
+	  if (sCounter >= 50 && sCounter <= 54)
 	  {
-		  setNumberOnClock(10);
+		  secondLed = 10;
 	  }
-	  if (sCounter >= 55 && mCount <= 59)
+	  if (sCounter >= 55 && sCounter <= 59)
 	  {
-		  setNumberOnClock(11);
+		  secondLed = 11;
 	  }
 
-	  ////////////////////////////////////////////////////////////////
+	  //Set led
+	  clearAllClock();
+
+	  if (hourLed == minuteLed)
+	  {
+		  if (hourLed == secondLed)
+		  {
+			  setNumberOnClock(hourLed);
+		  }
+		  if (hourLed != secondLed)
+		  {
+			  setNumberOnClock(hourLed);
+			  setNumberOnClock(secondLed);
+		  }
+	  }
+
+	  if (hourLed != minuteLed)
+	  {
+		  if (hourLed == secondLed)
+		  {
+			  setNumberOnClock(hourLed);
+			  setNumberOnClock(minuteLed);
+		  }
+		  if (hourLed != secondLed)
+		  {
+			  if (minuteLed == secondLed)
+			  {
+				  setNumberOnClock(hourLed);
+				  setNumberOnClock(minuteLed);
+			  }
+			  if (minuteLed != secondLed)
+			  {
+				  setNumberOnClock(hourLed);
+				  setNumberOnClock(minuteLed);
+				  setNumberOnClock(secondLed);
+			  }
+		  }
+	  }
+
+	  ////////////////////////////////////////////
 	  if (sCounter == 59)
 	  {
 		  if (mCounter == 59)
 		  {
-			  if (hCounter == 11)
+			  if (hourLed == 11)
 			  {
-				  hCounter = 0;
+				  hourLed = 0;
+				  mCounter = 0;
+				  sCounter = -1;
 			  }
-			  hCounter++;
+			  hourLed++;
 			  mCounter = 0;
+			  sCounter = -1;
 		  }
 		  mCounter++;
-		  sCounter = 0;
+		  sCounter = -1;
 	  }
 	  sCounter++;
 	  HAL_Delay(1000);
