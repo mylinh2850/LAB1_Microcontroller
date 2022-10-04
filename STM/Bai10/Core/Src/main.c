@@ -189,6 +189,7 @@ int main(void) {
 	int indexOfHourLed = 0;
 	int indexOfMinuteLed = 0;
 	int indexOfSecondLed = 0;
+	int hourCounter = 0;
 	int minuteCounter = 0;
 	int secondCounter = 0;
 	while (1) {
@@ -310,12 +311,12 @@ int main(void) {
 		//Timer setting
 		if (secondCounter == 59) {		//if seconds = 59
 			if (minuteCounter == 59) {	//if minutes = 59
-				if (indexOfHourLed == 11) {	//if hours = 11
-					indexOfHourLed = 0;
+				if (hourCounter == 11) {	//if hours = 11
+					hourCounter = 0;
 					minuteCounter = 0;
 					secondCounter = -1;
 				}
-				indexOfHourLed++;
+				hourCounter++;
 				minuteCounter = 0;
 				secondCounter = -1;
 			}
